@@ -1,0 +1,10 @@
+# Thư mục tạm của Visual Studio
+.vs/
+
+# Tệp tạm và dữ liệu cache
+*.log
+*.tmp
+
+# Thư mục build và output
+bin/
+obj/
