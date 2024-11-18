@@ -11,7 +11,7 @@ namespace Harmic.Controllers
 
         public IActionResult Index()
         {
-            ViewModel view = new ViewModel()
+            ViewModel view = new()
             {
                 TbProductList = [.. _context.TbProducts],
                 TbBlogList = [.. _context.TbBlogs],

@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\project\\Harmic\\Harmic\\Harmic\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Harmic.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Harmic.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Harmic.zjdj2upv2v.bundle.scp.css"
     },
     {
       "Id": "D:\\project\\Harmic\\Harmic\\Harmic\\wwwroot\\admin\\dist\\css\\adminlte.css",
@@ -8505,8 +8505,8 @@
       "PackagePath": "staticwebassets\\assets\\images\\megamenu\\slider\\2.jpg"
     },
     {
-      "Id": "D:\\project\\Harmic\\Harmic\\Harmic\\wwwroot\\assets\\images\\payment\\1.png",
-      "PackagePath": "staticwebassets\\assets\\images\\payment\\1.png"
+      "Id": "D:\\project\\Harmic\\Harmic\\Harmic\\wwwroot\\assets\\images\\payment\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\payment\\1.jpg"
     },
     {
       "Id": "D:\\project\\Harmic\\Harmic\\Harmic\\wwwroot\\assets\\images\\product\\1-1-270x300.jpg",
@@ -9411,6 +9411,10 @@
     {
       "Id": "D:\\project\\Harmic\\Harmic\\Harmic\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Harmic.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Harmic.Microsoft.AspNetCore.StaticWebAssets.props",
