@@ -166,10 +166,12 @@
                             {
                                 @foreach (var item in Model.TbProductList)
                                 {
+                                    string sUrl = $"/product/{item.Alias}-{item.ProductId}.html";
                                     <div class="col-xl-3 col-lg-4 col-sm-6">
                                         <div class="product-item">
                                             <div class="product-img img-zoom-effect">
-                                                <a href="single-product.html">
+
+                                                <a href="@sUrl">
                                                     <img class="img-full" src="@item.Image" alt="Product Images">
                                                 </a>
                                                 <div class="product-add-action">
@@ -1797,43 +1799,43 @@
                     <div class="swiper-wrapper">
                         @if (Model.TbProductList != null)
                         {
-                            @foreach(var item in Model.TbProductList)
+                            @foreach (var item in Model.TbProductList)
                             {
-                            <div class="swiper-slide">
-                                <div class="product-list-item">
-                                    <div class="product-img img-zoom-effect">
-                                        <a href="single-product.html">
-                                            <img class="img-full" src="@item.Image" alt="Product Images">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <a class="product-name" href="single-product.html">@item.Title</a>
-                                        <div class="price-box pb-1">
-                                            <span class="new-price">$@item.Price</span>
+                                <div class="swiper-slide">
+                                    <div class="product-list-item">
+                                        <div class="product-img img-zoom-effect">
+                                            <a href="single-product.html">
+                                                <img class="img-full" src="@item.Image" alt="Product Images">
+                                            </a>
                                         </div>
-                                        <div class="rating-box-wrap">
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="pe-7s-star"></i></li>
-                                                    <li><i class="pe-7s-star"></i></li>
-                                                    <li><i class="pe-7s-star"></i></li>
-                                                    <li><i class="pe-7s-star"></i></li>
-                                                    <li><i class="pe-7s-star"></i></li>
-                                                </ul>
+                                        <div class="product-content">
+                                            <a class="product-name" href="single-product.html">@item.Title</a>
+                                            <div class="price-box pb-1">
+                                                <span class="new-price">$@item.Price</span>
                                             </div>
-                                            <div class="product-add-action">
-                                                <ul>
-                                                    <li>
-                                                        <a href="cart.html">
-                                                            <i class="pe-7s-cart"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                            <div class="rating-box-wrap">
+                                                <div class="rating-box">
+                                                    <ul>
+                                                        <li><i class="pe-7s-star"></i></li>
+                                                        <li><i class="pe-7s-star"></i></li>
+                                                        <li><i class="pe-7s-star"></i></li>
+                                                        <li><i class="pe-7s-star"></i></li>
+                                                        <li><i class="pe-7s-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-add-action">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="cart.html">
+                                                                <i class="pe-7s-cart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             }
                         }
                     </div>
@@ -1861,10 +1863,12 @@
                         {
                             foreach (var item in Model.TbBlogList)
                             {
+                                string sUrl = $"/Blog/{item.Alias}-{item.BlogId}.html";
+
                                 <div class="swiper-slide">
                                     <div class="blog-item">
                                         <div class="blog-img img-zoom-effect">
-                                            <a href="blog-detail-left-sidebar.html">
+                                            <a href="@sUrl">
                                                 <img class="img-full" src="@item.Image" alt="Blog Image">
                                             </a>
                                         </div>
@@ -1883,7 +1887,7 @@
                                                 </ul>
                                             </div>
                                             <h5 class="title mb-4">
-                                                <a href="blog-detail-left-sidebar.html">@item.Title</a>
+                                                <a href="@sUrl">@item.Title</a>
                                             </h5>
                                             <p class="short-desc mb-5">@item.Description</p>
                                             <div class="button-wrap">

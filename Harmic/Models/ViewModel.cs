@@ -17,5 +17,7 @@
         public List<TbProductCategory>? TbProductCategoryList { get; set; }
         public List<TbProductReview>? TbProductReviewList { get; set; }
         public List<TbRole>? TbRoleList { get; set; }
+        public TbProduct? SelectedProduct {get; set;}
+        public TbBlog? SelectedTblog {get; set;}
     }
 }

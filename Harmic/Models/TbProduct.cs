@@ -48,4 +48,9 @@ public partial class TbProduct
     public virtual ICollection<TbOrderDetail> TbOrderDetails { get; set; } = new List<TbOrderDetail>();
 
     public virtual ICollection<TbProductReview> TbProductReviews { get; set; } = new List<TbProductReview>();
+
+    public static implicit operator List<object>(TbProduct v)
+    {
+        throw new NotImplementedException();
+    }
 }
