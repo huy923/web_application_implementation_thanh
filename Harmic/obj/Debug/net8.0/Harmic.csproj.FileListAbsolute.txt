@@ -1132,10 +1132,11 @@ D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\staticwebassets\msbuild.build.H
 D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Harmic.props
 D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Harmic.props
 D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\staticwebassets.pack.json
-D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\Harmic.csproj.Up2Date
 D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\Harmic.dll
 D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\refint\Harmic.dll
 D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\Harmic.pdb
 D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\Harmic.genruntimeconfig.cache
 D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\ref\Harmic.dll
+D:\project\Harmic\Harmic\Harmic\bin\Debug\net8.0\System.ClientModel.dll
+D:\project\Harmic\Harmic\Harmic\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
