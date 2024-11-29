@@ -1,0 +1,46 @@
+﻿@model Harmic.Models.TbMenu
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-wrapper pt-3">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col ">
+                    <div class="card card-primary">
+
+                        <div class="card-header">
+                            <h3 class="card-title">xóa Menu</h3>
+                        </div>
+                        <div class="p-4">
+                            <dt class="col-sm-2">Tiêu đề: @Model.Title
+                            </dt>
+
+                            <dt class="col-sm-2 mt-3">Alias: @Model.Alias
+                            </dt>
+                            <dt class="col-sm-2 mt-3">Mô tả : @Model.Description
+                            </dt>
+
+                            <dt class="col-sm-2 mt-3">mức : @Model.Levels
+                            </dt>
+                            <dt class="col-sm-2 mt-3">Menu cha: @Model.ParentId
+                            </dt>
+                            <dt class="col-sm-2 mt-3">Hiện : @Html.DisplayFor(model => model.IsActive)
+                            </dt>
+
+                            <form asp-action="Delete" class="mt-3">
+                                <input type="hidden" asp-for="MenuId" />
+                                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                                <a class="btn btn-primary" asp-action="Index">Back to List</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+</div>
