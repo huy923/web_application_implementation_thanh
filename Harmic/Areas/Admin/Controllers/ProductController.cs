@@ -48,7 +48,7 @@ namespace Harmic.Areas.Admin.Controllers
         // GET: Admin/Product/Create
         public IActionResult Create()
         {
-            ViewData["CategoryProductId"] = new SelectList(_context.TbProductCategories, "CategoryProductId", "CategoryProductId");
+            ViewData["CategoryProductId"] = new SelectList(_context.TbProductCategories, "CategoryProductId", "Title");
             return View();
         }
 
@@ -61,6 +61,7 @@ namespace Harmic.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                tbProduct.Alias = Harmic.Utilities.Function.TitleSlugGenerationAlias(title: tbProduct.Title) ;
                 _context.Add(tbProduct);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -82,7 +83,7 @@ namespace Harmic.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoryProductId"] = new SelectList(_context.TbProductCategories, "CategoryProductId", "CategoryProductId", tbProduct.CategoryProductId);
+            ViewData["CategoryProductId"] = new SelectList(_context.TbProductCategories, "CategoryProductId", "Title", tbProduct.CategoryProductId);
             return View(tbProduct);
         }
 
