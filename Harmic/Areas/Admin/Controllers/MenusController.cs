@@ -10,14 +10,9 @@ using Harmic.Models;
 namespace Harmic.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class MenusController : Controller
+    public class MenusController(HarmicContext context) : Controller
     {
-        private readonly HarmicContext _context;
-
-        public MenusController(HarmicContext context)
-        {
-            _context = context;
-        }
+        private readonly HarmicContext _context = context;
 
         // GET: Admin/Menus
         public async Task<IActionResult> Index()

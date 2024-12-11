@@ -10,23 +10,16 @@ using Harmic.Models;
 namespace Harmic.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class ProductController : Controller
+    public class ProductController(HarmicContext context) : Controller
     {
-        private readonly HarmicContext _context;
+        private readonly HarmicContext _context = context;
 
-        public ProductController(HarmicContext context)
-        {
-            _context = context;
-        }
-
-        // GET: Admin/Product
         public async Task<IActionResult> Index()
         {
             var harmicContext = _context.TbProducts.Include(t => t.CategoryProduct);
             return View(await harmicContext.ToListAsync());
         }
 
-        // GET: Admin/Product/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -52,9 +45,6 @@ namespace Harmic.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/Product/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ProductId,Title,Alias,CategoryProductId,Description,Detail,Image,Price,PriceSale,Quantity,CreatedDate,CreatedBy,ModifiedDate,ModifiedBy,IsNew,IsBestSeller,UnitInStock,IsActive,Star")] TbProduct tbProduct)
@@ -70,7 +60,6 @@ namespace Harmic.Areas.Admin.Controllers
             return View(tbProduct);
         }
 
-        // GET: Admin/Product/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,9 +76,6 @@ namespace Harmic.Areas.Admin.Controllers
             return View(tbProduct);
         }
 
-        // POST: Admin/Product/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ProductId,Title,Alias,CategoryProductId,Description,Detail,Image,Price,PriceSale,Quantity,CreatedDate,CreatedBy,ModifiedDate,ModifiedBy,IsNew,IsBestSeller,UnitInStock,IsActive,Star")] TbProduct tbProduct)
@@ -119,11 +105,10 @@ namespace Harmic.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryProductId"] = new SelectList(_context.TbProductCategories, "CategoryProductId", "CategoryProductId", tbProduct.CategoryProductId);
+            ViewData["CategoryProductId"] = new SelectList(_context.TbProductCategories, "CategoryProductId", "Title", tbProduct.CategoryProductId);
             return View(tbProduct);
         }
 
-        // GET: Admin/Product/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -142,7 +127,6 @@ namespace Harmic.Areas.Admin.Controllers
             return View(tbProduct);
         }
 
-        // POST: Admin/Product/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
