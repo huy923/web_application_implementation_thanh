@@ -2,9 +2,9 @@
 
 namespace Harmic.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    [Area("Admin")]
+    public class HomeController : AdminBaseController
     {
-        [Area("Admin")]
         public IActionResult Index()
         {
             return View();

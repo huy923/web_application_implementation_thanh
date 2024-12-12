@@ -10,7 +10,7 @@ using Harmic.Models;
 namespace Harmic.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class MenusController(HarmicContext context) : Controller
+    public class MenusController(HarmicContext context) : AdminBaseController
     {
         private readonly HarmicContext _context = context;
 
