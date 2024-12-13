@@ -70,13 +70,13 @@
                     <form id="contact-form" class="contact-form">
                         <h4 class="contact-form-title pb-2 mb-7">Send Us a Massage</h4>
                         <div class="form-field">
-                            <input type="text" id="c_name" placeholder="Name*" class="input-field">
+                            <input type="text" id="c_name" placeholder="Name*" class="input-field"/>
                         </div>
                         <div class="form-field mt-6">
-                            <input type="text" id="c_phone" placeholder="Phone*" class="input-field">
+                            <input type="text" id="c_phone" placeholder="Phone*" class="input-field"/>
                         </div>
                         <div class="form-field mt-6">
-                            <input type="text" id="c_email" placeholder="Email*" class="input-field">
+                            <input type="text" id="c_email" placeholder="Email*" class="input-field"/>
                         </div>
                         <div class="form-field mt-6">
                             <textarea id="c_message" placeholder="Message" class="textarea-field"></textarea>
@@ -84,7 +84,6 @@
                         <div class="button-wrap mt-8">
                             <button id="c_submit" type="submit" value="submit" class="btn btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0" name="submit">Post Message</button>
                         </div>
-                        <p class="form-messege mt-3 mb-0"></p>
                     </form>
                 </div>
             </div>
@@ -102,63 +101,62 @@
                 $.ajax({
                     url: "/Contact/Create",
                     type: "POST",
-                    data: { name: _name, phone: _phone, email: _email, message: _message },
-                    success: function (result) {
+                    data: { name: _name, phone: _phone, email: _email, message: _message }, success: function (result) {
                         if (result != null) {
                             $("#c_name").val("");
                             $("#c_phone").val("");
                             $("#c_email").val("");
                             $("#c_message").val("");
                             toastr.success('Gửi thành công');
-                        }
-                        else {
+                        } else {
                             toastr.success('Gửi không thành công');
                         }
                     }
-                });
+                })
             });
-        });
+        })
     </script>
 }
+@* @section Scripts { *@
+@*  <script> *@
+@*      $(document).ready(function () {  *@
+@*          $("#c_submit").click(function () {  *@
+@*              // Lấy dữ liệu từ các input *@
+@*              var _name = $("#c_name").val();  *@
+@*              var _phone = $("#c_phone").val();  *@
+@*              var _email = $("#c_email").val();  *@
+@*              var _message = $("#c_message").val();  *@
 
-@* <script> *@
-@*     $(document).ready(function () { *@
-@*         $("#c_submit").click(function () { *@
-@*             // Lấy dữ liệu từ các input *@
-@*             var _name = $("#c_name").val(); *@
-@*             var _phone = $("#c_phone").val(); *@
-@*             var _email = $("#c_email").val(); *@
-@*             var _message = $("#c_message").val(); *@
-
-@*             // Gửi request AJAX *@
-@*             $.ajax({ *@
-@*                 url: "/Contact/Create", // Đường dẫn tới action  *@
-@*                 type: "POST", // Loại request *@
-@*                 data: { *@
-@*                     Name: _name, *@
-@*                     Phone: _phone, *@
-@*                     Email: _email, *@
-@*                     Message: _message *@
-@*                 }, *@
-@*                 success: function (response) { *@
-@*                     if (response.status) { *@
-@*                         // Xử lý khi thành công *@
-@*                         toastr.success("Gửi thông tin thành công!"); *@
-@*                         // Xóa giá trị trong các input *@
-@*                         $("#c_name").val(""); *@
-@*                         $("#c_phone").val(""); *@
-@*                         $("#c_email").val(""); *@
-@*                         $("#c_message").val(""); *@
-@*                     } else { *@
-@*                         // Xử lý khi thất bại *@
-@*                         toastr.warning("Gửi thông tin thất bại!"); *@
-@*                     } *@
-@*                 }, *@
-@*                 error: function () { *@
-@*                     // Xử lý khi có lỗi trong quá trình gửi request *@
-@*                     toastr.error("Đã xảy ra lỗi. Vui lòng thử lại!"); *@
-@*                 } *@
-@*             }); *@
-@*         }); *@
-@*     }); *@
-@* </script> *@
+@*              // Gửi request AJAX  *@
+@*              $.ajax({ *@
+@*                  url: "/Contact/Create", // Đường dẫn tới action   *@
+@*                  type: "POST", // Loại request  *@
+@*                  data: {  *@
+@*                      Name: _name,  *@
+@*                      Phone: _phone,  *@
+@*                      Email: _email,  *@
+@*                      Message: _message  *@
+@*                  },  *@
+@*                  success: function (response) {  *@
+@*                      if (response.status) { *@
+@*                          // Xử lý khi thành công  *@
+@*                          toastr.success("Gửi thông tin thành công!");  *@
+@*                          // Xóa giá trị trong các input  *@
+@*                          $("#c_name").val("");  *@
+@*                          $("#c_phone").val("");  *@
+@*                          $("#c_email").val("");  *@
+@*                          $("#c_message").val("");  *@
+@*                      } else {  *@
+@*                          // Xử lý khi thất bại  *@
+@*                          toastr.warning("Gửi thông tin thất bại!");  *@
+@*                      }  *@
+@*                  }, *@
+@*                  error: function () {  *@
+@*                      // Xử lý khi có lỗi trong quá trình gửi request  *@
+@*                      toastr.error("Đã xảy ra lỗi. Vui lòng thử lại!");  *@
+@*                  }  *@
+@*              });  *@
+@*          });  *@
+@*      });  *@
+@*  </script>  *@
+@*  } *@

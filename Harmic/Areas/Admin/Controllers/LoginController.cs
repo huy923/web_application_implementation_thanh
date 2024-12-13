@@ -16,10 +16,9 @@ namespace Harmic.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Authenticate(string username, string password)
         {
-            var checkUser = _context.TbAccounts.Where(u => (u.Username == username) && (u.Password == password)).FirstOrDefault();
+            var checkUser = _context.TbAccounts.Where(u => (u.Username == username) && (u.Password == password) && (u.IsActive == true)).FirstOrDefault();
             if (checkUser != null)
             {
-
                 var cookieOptions = new CookieOptions
                 {
                     Expires = DateTime.UtcNow.AddYears(1)
